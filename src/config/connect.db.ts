@@ -1,4 +1,4 @@
-import prisma from './prisma.configs';
+import { prisma } from "./prisma.configs";
 
 export const connectDB = async () => {
   try {

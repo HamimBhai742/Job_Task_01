@@ -1,0 +1,15 @@
+import { Response } from 'express';
+import { ENV } from '../config/env';
+
+interface IToken {
+  accessToken?: string;
+}
+export const setCookies = (res: Response, token: IToken) => {
+  if (token?.accessToken) {
+    res.cookie('accessToken', token.accessToken, {
+      httpOnly: true,
+      secure: ENV.NODE_ENV === 'production',
+      sameSite: 'none',
+    });
+  }
+};
