@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
-import { createAsyncFn } from '../utils/create.async.fn';
+import { createAsyncFn } from '../../utils/create.async.fn';
 import passport from 'passport';
-import { AppError } from '../error/coustom.error';
-import { sendResponse } from '../utils/sendResponse';
+import { AppError } from '../../error/coustom.error';
+import { sendResponse } from '../../utils/sendResponse';
 import httpStatusCodes from 'http-status-codes';
-import { craeteUserToken } from '../utils/craete.user.token';
-import { setCookies } from '../utils/set.cookies';
+import { craeteUserToken } from '../../utils/craete.user.token';
+import { setCookies } from '../../utils/set.cookies';
+
 const login = createAsyncFn(
   async (req: Request, res: Response, next: NextFunction) => {
     passport.authenticate('local', async (err: any, user: any, info: any) => {
@@ -32,6 +33,18 @@ const login = createAsyncFn(
   }
 );
 
+const getMe = createAsyncFn(
+  async (req: Request, res: Response, next: NextFunction) => {
+    sendResponse(res, {
+      statusCode: httpStatusCodes.OK,
+      success: true,
+      message: 'You have successfully logged in.',
+      data: req.user,
+    });
+  }
+);
+
 export const authController = {
   login,
+  getMe
 };

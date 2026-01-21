@@ -8,7 +8,7 @@ import { router } from './routes/routes';
 import { ENV } from './config/env';
 import { globalErrrHandle } from './middlewares/global.error';
 import { notFound } from './middlewares/notFound';
-
+import cookieParser from 'cookie-parser'
 export const app = express();
 
 app.use(
@@ -19,6 +19,7 @@ app.use(
   })
 );
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
