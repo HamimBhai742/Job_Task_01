@@ -1,6 +1,7 @@
 import { Server } from 'http';
 import { app } from './app';
 import { ENV } from './config/env';
+import { connectDB } from './config/connect.db';
 let server: Server;
 const PORT = ENV.PORT;
 function startServer() {
@@ -10,4 +11,7 @@ function startServer() {
 }
 
 
-startServer();
+(() => {
+  connectDB();
+  startServer();
+})();
