@@ -11,4 +11,10 @@ router.post(
   organizationController.createOrganization
 );
 
+router.get(
+  '/',
+  checkAuth(Role.PLATFORM_ADMIN),
+  organizationController.getAllOrganization
+);
+
 export const organizationRouter = router;

@@ -7,6 +7,12 @@ const createOrganization = async (payload: any) => {
   return org;
 };
 
+const getAllOrganization = async () => {
+  const org = await prisma.organization.findMany();
+  return org;
+};
+
 export const organizationServices = {
   createOrganization,
+  getAllOrganization,
 };

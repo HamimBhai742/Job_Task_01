@@ -23,9 +23,13 @@ export const checkAuth =
         where: { email: decod.email },
       });
 
+      
+
       if (!user) {
         throw new AppError('User not found', httpStatusCode.NOT_FOUND);
       }
+
+
 
       if (!roles.includes(decod.role)) {
         throw new AppError(
