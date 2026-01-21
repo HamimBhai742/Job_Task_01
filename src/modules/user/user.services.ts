@@ -13,6 +13,14 @@ const createOrgAdmin = async (
     password,
     ENV.PLT_ADMIN_PASSWORD_SALT_ROUNDS
   );
+
+  if (!organizationId) {
+    throw new AppError(
+      'organizationId is required',
+      httpStatuscode.BAD_REQUEST
+    );
+  }
+
   const user = await prisma.user.create({
     data: {
       email,
@@ -33,6 +41,13 @@ const createOrgMember = async (
   const orgAdmin = await prisma.user.findUnique({
     where: { id: orgadminId, role: Role.OG_ADMIN },
   });
+
+  if (!organizationId) {
+    throw new AppError(
+      'Organization Id is required',
+      httpStatuscode.BAD_REQUEST
+    );
+  }
 
   if (orgAdmin?.organizationId !== organizationId) {
     throw new AppError(
@@ -57,14 +72,19 @@ const createOrgMember = async (
 };
 
 const getMyOrgMember = async (userId: string) => {
-
-  const user = await prisma.user.findUnique({
+  const orgAdmin = await prisma.user.findUnique({
     where: { id: userId, role: Role.OG_ADMIN },
   });
-  return user;
+  const orgId = orgAdmin?.organizationId;
+
+  const members = await prisma.user.findMany({
+    where: { organizationId: orgId, role: Role.OG_MEMBER },
+  });
+  return members;
 };
 
 export const userService = {
   createOrgAdmin,
   createOrgMember,
+  getMyOrgMember,
 };

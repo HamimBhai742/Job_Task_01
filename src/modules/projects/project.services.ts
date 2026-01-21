@@ -19,14 +19,25 @@ const createProject = async (payload: any, userId: string) => {
   return project;
 };
 
-const getOrgProjects = async (organizationId: string) => {
+const getMyOrgProjects = async (userId: string) => {
+  const orgAdmin = await prisma.user.findUnique({
+    where: { id: userId, role: Role.OG_ADMIN },
+  });
+  const organizationId = orgAdmin?.organizationId;
+  if (!organizationId) {
+    throw new AppError(
+      'Organization Id is required',
+      httpStatusCode.BAD_REQUEST
+    );
+  }
   const projects = await prisma.project.findMany({
     where: { organizationId },
+    include: { organization: true, tasks: true },
   });
   return projects;
 };
 
 export const projectServices = {
   createProject,
-  getOrgProjects,
+  getMyOrgProjects,
 };

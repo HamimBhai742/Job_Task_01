@@ -10,3 +10,11 @@ router.post(
   checkAuth(Role.OG_ADMIN),
   projectController.createProject
 );
+
+router.get(
+  '/my-org',
+  checkAuth(Role.OG_ADMIN),
+  projectController.getMyOrgProjects
+);
+
+export const projectRouter = router;

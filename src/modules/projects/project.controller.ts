@@ -5,7 +5,6 @@ import httpStatusCode from 'http-status-codes';
 import { projectServices } from './project.services';
 import { Ijwt } from '../../types/user.interface';
 
-
 const createProject = createAsyncFn(async (req: Request, res: Response) => {
   const payload = req.body;
   const { userId } = req.user as Ijwt;
@@ -19,7 +18,18 @@ const createProject = createAsyncFn(async (req: Request, res: Response) => {
   });
 });
 
+const getMyOrgProjects = createAsyncFn(async (req: Request, res: Response) => {
+  const {userId} = req.user as Ijwt;
+  const projects = await projectServices.getMyOrgProjects(userId);
+  sendResponse(res, {
+    statusCode: httpStatusCode.OK,
+    success: true,
+    message: 'Projects fetched successfully',
+    data: projects,
+  });
+});
 
 export const projectController = {
   createProject,
+  getMyOrgProjects,
 };

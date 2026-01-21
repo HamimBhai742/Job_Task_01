@@ -30,6 +30,7 @@ const createOrgMember = createAsyncFn(async (req: Request, res: Response) => {
     password,
     organizationId
   );
+
   sendResponse(res, {
     statusCode: httpStatusCode.CREATED,
     success: true,
@@ -38,7 +39,19 @@ const createOrgMember = createAsyncFn(async (req: Request, res: Response) => {
   });
 });
 
+const getMyOrgMember = createAsyncFn(async (req: Request, res: Response) => {
+  const { userId } = req.user as Ijwt;
+  const user = await userService.getMyOrgMember(userId);
+  sendResponse(res, {
+    statusCode: httpStatusCode.OK,
+    success: true,
+    message: 'User fetched successfully',
+    data: user,
+  });
+});
+
 export const userController = {
   createOrgAdmin,
   createOrgMember,
+  getMyOrgMember,
 };
