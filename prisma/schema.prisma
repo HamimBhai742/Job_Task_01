@@ -24,10 +24,23 @@ model Organization {
   id String @id @default(uuid())
   name String @unique
   users User[]
+  projects Project[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("organizations")
+}
+
+model Project{
+  id String @id @default(uuid())
+  name String
+  description String?
+  organizationId String
+  organization Organization @relation(fields: [organizationId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("projects")
 }
 
  enum Role {

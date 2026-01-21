@@ -31,7 +31,7 @@ const createOrgMember = async (
   organizationId: string
 ) => {
   const orgAdmin = await prisma.user.findUnique({
-    where: { id: orgadminId },
+    where: { id: orgadminId, role: Role.OG_ADMIN },
   });
 
   if (orgAdmin?.organizationId !== organizationId) {
@@ -52,6 +52,14 @@ const createOrgMember = async (
       role: Role.OG_MEMBER,
       organizationId,
     },
+  });
+  return user;
+};
+
+const getMyOrgMember = async (userId: string) => {
+
+  const user = await prisma.user.findUnique({
+    where: { id: userId, role: Role.OG_ADMIN },
   });
   return user;
 };
