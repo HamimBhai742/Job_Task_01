@@ -27,15 +27,9 @@ export const seedAdmin = async () => {
       password: hashedPassword,
       role: Role.PLATFORM_ADMIN,
     };
+    console.log(payload);
     await prisma.user.create({
       data: payload,
-    });
-    await prisma.user.create({
-      data: {
-        email,
-        password: hashedPassword,
-        role: 'PLATFORM_ADMIN',
-      },
     });
   } catch (error) {
     console.log(error);
