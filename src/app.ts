@@ -27,7 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Job Task Server is running...........');
 });
 
 app.use('/api/v1', router);

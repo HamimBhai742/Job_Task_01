@@ -89,10 +89,13 @@ PLATFORM_ADMIN    # Full system access
 ```
 POST   /api/v1/auth/login              # User authentication
 POST   /api/v1/auth/register           # User registration
+
 GET    /api/v1/organizations           # List organizations by platform admin
 POST   /api/v1/organizations/create    # Create organization by platform admin
+
 GET    /api/v1/projects/my-org         # List own organization projects
 POST   /api/v1/projects/create         # Create own organization project by org Admin
+
 POST    /api/v1/users/create-org-admin # Create org_admin by platform admin
 POST   /api/v1/users/create-org-member # Create org_member by org_admin
 GET    /api/v1/users/my-org-member     # List own organization member by org_admin
@@ -131,9 +134,20 @@ GET   /api/v1/tasks/my-assigned-tasks  # List my assigned task by org_member
 ### Authentication Setup
 1. **Login Request**: POST `/api/v1/auth/login`
    ```json
+   **PLATFORM_ADMIN**
    {
-     "email": "admin@example.com",
-     "password": "password123"
+     "email": "mdhamim5088@gmail.com",
+     "password": "Hamim@742"
+   }
+    **ORGANIZATION_ADMIN**
+   {
+     "email": "mdhamim3388@gmail.com",
+     "password": "658742"
+   }
+    **ORGNIZATION_MEMBER**
+    {
+     "email": "mdhamim6088@gmail.com",
+     "password": "Hamim@742"
    }
    ```
 
