@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "55922665-2325-4bfe-895c-40a4cc3120f3",
+		"name": "Job Task  01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39080894"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "- GET api/a5/wallet/me → Get my wallet details",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim6088@gmail.com\",\n    \"password\":\"Hamim@742\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "- GET api/a5/wallet/me → Get my wallet details",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim5088@gmail.com\",\n    \"password\":\"658742\"\n }"
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/auth/me",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "create Org",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMjQzOWNiNC1iNGY4LTRmZDUtOGVkNS0xODNlNTgzODRiY2IiLCJlbWFpbCI6Im1kaGFtaW01MDg4QGdtYWlsLmNvbSIsInJvbGUiOiJQTEFURk9STV9BRE1JTiIsImlhdCI6MTc2OTA1NjYxNSwiZXhwIjoxNzY5MTQzMDE1fQ.5gs8IrMFykjH9zNXYZ-MeL8V6WyX6dnIOqvI7E59jR4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n\"name\":\"1&9 Appreal Ltd.\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/organizations/create",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all org",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMjQzOWNiNC1iNGY4LTRmZDUtOGVkNS0xODNlNTgzODRiY2IiLCJlbWFpbCI6Im1kaGFtaW01MDg4QGdtYWlsLmNvbSIsInJvbGUiOiJQTEFURk9STV9BRE1JTiIsImlhdCI6MTc2OTA1NjYxNSwiZXhwIjoxNzY5MTQzMDE1fQ.5gs8IrMFykjH9zNXYZ-MeL8V6WyX6dnIOqvI7E59jR4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim5088@gmail.com\",\n    \"password\":\"658742\"\n }"
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/organizations",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Org Admin",
+			"item": [
+				{
+					"name": "create org admin by plt form admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMjQzOWNiNC1iNGY4LTRmZDUtOGVkNS0xODNlNTgzODRiY2IiLCJlbWFpbCI6Im1kaGFtaW01MDg4QGdtYWlsLmNvbSIsInJvbGUiOiJQTEFURk9STV9BRE1JTiIsImlhdCI6MTc2OTA1NjYxNSwiZXhwIjoxNzY5MTQzMDE1fQ.5gs8IrMFykjH9zNXYZ-MeL8V6WyX6dnIOqvI7E59jR4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim3388@gmail.com\",\n    \"password\":\"658742\",\n    \"organizationId\":\"93342949-b5db-44ff-821b-7cb31fe933d7\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/users/create-org-admin",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"create-org-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create org member by org form admin Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNmUzOGU0Yi1mMDk3LTRjYzMtODUzOC1jZDczNGQ1MjAyYzciLCJlbWFpbCI6Im1kaGFtaW0zMzg4QGdtYWlsLmNvbSIsInJvbGUiOiJPR19BRE1JTiIsImlhdCI6MTc2OTA1NjY5NCwiZXhwIjoxNzY5MTQzMDk0fQ.byKM9wx_5q4BOw22LafAq_EiKk4xS3wFCCtU7BiVZdQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim6088@gmail.com\",\n    \"password\":\"Hamim@742\",\n    \"organizationId\":\"93342949-b5db-44ff-821b-7cb31fe933d7\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/users/create-org-member",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"create-org-member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my org memeber",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNmUzOGU0Yi1mMDk3LTRjYzMtODUzOC1jZDczNGQ1MjAyYzciLCJlbWFpbCI6Im1kaGFtaW0zMzg4QGdtYWlsLmNvbSIsInJvbGUiOiJPR19BRE1JTiIsImlhdCI6MTc2OTA1NjY5NCwiZXhwIjoxNzY5MTQzMDk0fQ.byKM9wx_5q4BOw22LafAq_EiKk4xS3wFCCtU7BiVZdQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim5088@gmail.com\",\n    \"password\":\"658742\"\n }"
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/users/my-org-member",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"my-org-member"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "craete project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNmUzOGU0Yi1mMDk3LTRjYzMtODUzOC1jZDczNGQ1MjAyYzciLCJlbWFpbCI6Im1kaGFtaW0zMzg4QGdtYWlsLmNvbSIsInJvbGUiOiJPR19BRE1JTiIsImlhdCI6MTc2OTA1NjY5NCwiZXhwIjoxNzY5MTQzMDk0fQ.byKM9wx_5q4BOw22LafAq_EiKk4xS3wFCCtU7BiVZdQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"name\":\"Todo App\",\n    \"description\":\"create,usert,sd gvfd fv dfvdfv,d,f vedf\",\n    \"organizationId\":\"93342949-b5db-44ff-821b-7cb31fe933d7\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/projects/create",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my org project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNmUzOGU0Yi1mMDk3LTRjYzMtODUzOC1jZDczNGQ1MjAyYzciLCJlbWFpbCI6Im1kaGFtaW0zMzg4QGdtYWlsLmNvbSIsInJvbGUiOiJPR19BRE1JTiIsImlhdCI6MTc2OTA1NjY5NCwiZXhwIjoxNzY5MTQzMDk0fQ.byKM9wx_5q4BOw22LafAq_EiKk4xS3wFCCtU7BiVZdQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim5088@gmail.com\",\n    \"password\":\"658742\"\n }"
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/projects/my-org",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"my-org"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "assigned member for task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNmUzOGU0Yi1mMDk3LTRjYzMtODUzOC1jZDczNGQ1MjAyYzciLCJlbWFpbCI6Im1kaGFtaW0zMzg4QGdtYWlsLmNvbSIsInJvbGUiOiJPR19BRE1JTiIsImlhdCI6MTc2OTA1NjY5NCwiZXhwIjoxNzY5MTQzMDk0fQ.byKM9wx_5q4BOw22LafAq_EiKk4xS3wFCCtU7BiVZdQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"title\":\"Create Navbar\",\n    \"assignedToId\":\"6588d07f-3f8d-4bd7-b616-c7e547f6ecd0\",\n    \"projectId\":\"0e2eb269-8ae0-4d28-bba7-a304037735c7\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/tasks/assigned-tasks",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"assigned-tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my assignmed task for member",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTg4ZDA3Zi0zZjhkLTRiZDctYjYxNi1jN2U1NDdmNmVjZDAiLCJlbWFpbCI6Im1kaGFtaW02MDg4QGdtYWlsLmNvbSIsInJvbGUiOiJPR19NRU1CRVIiLCJpYXQiOjE3NjkwNTY3NzgsImV4cCI6MTc2OTE0MzE3OH0.2DtWSmA406_FxGCM2Gq3dbRt1oFKHNd5SIhkAETRKkw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n    \"email\":\"mdhamim5088@gmail.com\",\n    \"password\":\"658742\"\n }"
+						},
+						"url": {
+							"raw": "https://job-task-01.vercel.app/api/v1/tasks/my-assigned-tasks",
+							"protocol": "https",
+							"host": [
+								"job-task-01",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"my-assigned-tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
